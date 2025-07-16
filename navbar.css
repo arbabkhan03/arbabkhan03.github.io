@@ -1,0 +1,210 @@
+/* navbar.css */
+
+/* Navbar container */
+.navbar {
+  background-color: transparent !important;
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(223, 220, 216) !important;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 1.5em;
+  min-width: 130px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+   text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 2.4em;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 6px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: -1;
+}
+
+/* Hover/focus/active effects */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.active {
+  color: #0d9bff;
+  transform: scale(1.1);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after,
+.navbar-nav .nav-link.active::after {
+  opacity: 1;
+  animation: glassPulse 1.5s ease infinite alternate;
+}
+
+/* Pulse animation keyframes */
+@keyframes glassPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+/* Navbar brand */
+.navbar-brand {
+  color: rgb(223, 220, 216) !important;
+}
+
+/* Navbar toggler (hamburger) */
+.navbar-toggler {
+  display: block !important;
+  z-index: 9999;
+}
+
+/* Position shifts */
+.nav-shift {
+  position: relative;
+  left: 0;
+}
+
+@media (min-width: 992px) {
+  .nav-shift {
+    left: -25px;
+  }
+}
+
+/* .logo-shift {
+  position: relative;
+  left: 50px;
+} */
+
+/* ============================================================================================== */
+
+/* Mobile nav starts here */
+/* Hamburger icon hidden on desktop */
+/* Hide hamburger on desktop */
+.hamburger-btn {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 1100;
+}
+
+.hamburger-btn.hidden {
+  display: none;
+}
+
+
+/* Overlay initially hidden */
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  
+  display: flex;           /* keep in layout */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  opacity: 0;              /* hidden */
+  pointer-events: none;    /* ignore interactions when hidden */
+  transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.show {
+  opacity: 1;              /* visible */
+  pointer-events: auto;    /* interactable */
+}
+
+/* Mobile nav links */
+.mobile-nav {
+  list-style: none;
+
+  padding: 10px;
+  margin-top: 2rem;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-nav a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-right:1rem;
+}
+
+html.nav-open,
+body.nav-open {
+  overflow: hidden;
+  height: 100vh;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+
+/* Close button */
+#closeMobileMenu {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Show hamburger and hide desktop nav on small screens */
+@media (max-width: 991px) {
+  .hamburger-btn {
+    display: block;
+    
+  }
+
+  nav.desktop-navbar {
+    display: none !important;
+  }
+}
+
+/* MAke a sticky navbar for mobile */
+
+
+/* Default: desktop styles */
+
+
+
+
+

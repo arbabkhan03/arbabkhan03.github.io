@@ -1,0 +1,308 @@
+
+/* Glassmorphism overlay that covers entire viewport */
+.glass-overlay {
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(50px);
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    /* 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 0.1); */
+
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    /* deep drop shadow */
+    0 4px 10px rgba(255, 255, 255, 0.033) inset,
+    /* top inner light */
+    0 -4px 10px rgba(0, 0, 0, 0.2) inset;
+  /* bottom inner shadow */
+  display: flex;
+  flex-direction: column;
+  /* padding: 1rem 2rem; */
+  padding:5px;
+  /* More padding = border feels more "inside" */
+  margin: 15px;
+  /* Creates actual spacing from the page edges */
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-radius: 30px;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  z-index: 1;
+}
+
+.glass-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.8),
+      transparent,
+      rgba(255, 255, 255, 0.3));
+  z-index: 1;
+}
+
+
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.056);
+  border-radius: 25px;
+  padding: 32px;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 1);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+    line-height: 1.75;
+  font-size: 1.25rem;
+  margin-top: 4rem; /* or padding-top */
+}
+
+.glass-card-big {
+  background: rgba(255, 255, 255, 0.56);
+  border-radius: 25px;
+  padding: 2rem 6vw; /* dynamic padding on small screens */
+  width: 100%;
+  max-width: 100%;
+  margin: 2rem auto;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 1);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.75;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+}
+
+/* Desktop refinement */
+@media (min-width: 768px) {
+  .glass-card {
+    max-width: 800px; /* Limit card width on desktop */
+    padding: 2.5rem 3rem; /* Increase padding inside */
+  }
+}
+
+
+
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent);
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.8),
+      transparent,
+      rgba(255, 255, 255, 0.3));
+}
+
+
+/* ============================================================================== */
+
+/* Base button style */
+.link-group {
+  display: flex;
+  flex-wrap: wrap;           /* allows wrapping on small screens */
+  gap: 1rem 1.5rem;          /* vertical and horizontal spacing */
+  justify-content: center;   /* center horizontally */
+}
+
+
+.glass-link,
+.btn-primary {
+  position: relative;
+  /* for pseudo-element positioning */
+  background: transparent;
+  /* base transparent */
+  color: rgb(223, 220, 216);
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 14px 30px;
+  border: none;
+  /* no default border */
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 999px;
+  /* pill shape */
+  transition: color 0.3s ease, transform 0.3s ease;
+  user-select: none;
+  display: inline-block;
+  z-index: 1;
+}
+
+/* Create the glass pill background with ::before */
+.glass-link::before,
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 2.4em;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 6px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: -1;
+}
+
+a:active {
+  box-shadow: none;
+}
+
+
+/* Show glass pill background on hover/focus */
+.glass-link:hover::before,
+.glass-link:focus::before,
+.btn-primary:hover::before,
+.btn-primary:focus::before {
+  opacity: 1;
+  animation: glassPulse 1.5s ease infinite alternate;
+}
+
+/* Also scale button text slightly */
+.glass-link:hover,
+.glass-link:focus,
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: scale(1.1);
+}
+
+.glass-link:focus:not(:focus-visible)::before,
+.btn-primary:focus:not(:focus-visible)::before {
+  opacity: 0;
+}
+
+
+/* Pulse animation */
+@keyframes glassPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@media (max-width: 480px) {
+  .link-group {
+    flex-direction: column;
+    align-items: center;
+     gap: 0.4rem 0; /* reduce vertical and horizontal spacing */
+  }
+  
+  .glass-link, .btn-primary {
+    width: 100%;
+    max-width: 280px;  /* optional max width */
+    text-align: center;
+    margin:0;
+  }
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Background fade layer */
+.bg-fade-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("img_mk1/kajetan-daroch-fePmiSHK2mg-unsplash.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: blur(10px);
+  transform: scale(1.05);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: none;
+}
+
+/* Content layer */
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation keyframes */
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+
+
+/* ANimatoins for links */
+/* Add this to your main CSS (e.g., home.css or a global css file) */

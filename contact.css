@@ -1,0 +1,126 @@
+
+
+/* Form card */
+/* .glass-card-contact{
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 1);
+  padding: 2rem;
+  color: white;
+  width: 100%;
+  max-width: 600px;
+} */
+
+/* Inputs & Textarea */
+.glass-input,
+.glass-textarea {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem;
+  color: white;
+  width: 100%;
+}
+
+
+.glass-button,
+button[type="submit"],
+button[type="reset"] {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  font-size: 16px;
+  margin: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 
+              0 0 20px rgba(255, 255, 255, 0.2); /* Glow */
+  transform: none; /* Prevent text stretch */
+}
+
+
+/* Ensure bootstrap inputs blend in */
+.form-control:focus {
+  box-shadow: none;
+  outline: none;
+}
+/* Wrapper label */
+.glass-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+  font-size: 16px;
+}
+
+/* Hide default checkbox */
+.glass-toggle input {
+  display: none;
+}
+
+/* Toggle track */
+.glass-toggle .slider {
+  width: 50px;
+  height: 26px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  position: relative;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+/* Toggle knob */
+.glass-toggle .slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* When checked - move knob */
+.glass-toggle input:checked + .slider::before {
+  transform: translateY(-50%) translateX(24px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Optional: glowing background when active */
+.glass-toggle input:checked + .slider {
+  background: rgba(0, 255, 100, 0.15);
+  border-color: rgba(0, 255, 100, 0.3);
+}
+
+
+/* Mobile optimization */
+@media (max-width: 576px) {
+  .glass-card {
+    padding: 1.5rem;
+  }
+}
+

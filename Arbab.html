@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arbab Khan Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="glassLook.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="navbar.css" />
+
+
+</head>
+
+<body>
+    <div class="bg-fade-layer"></div>
+    <div class="page-content">
+        <div class="glass-overlay">
+            <div>
+                <header class="text-white py-3" style="background: transparent;">
+                    <!-- Hamburger button (visible on mobile) -->
+                    <button id="hamburgerToggle" class="hamburger-btn" aria-label="Toggle menu">☰</button>
+
+                    <!-- Mobile nav overlay -->
+                    <div class="mobile-nav-overlay" id="mobileMenuOverlay">
+                        <button id="closeMobileMenu" aria-label="Close menu">✕</button>
+                        <ul class="mobile-nav">
+                            <li><a class="nav-link" href="#home">Home</a></li>
+                            <li><a class="nav-link" href="#about">About</a></li>
+                            <li><a class="nav-link" href="#projects">Projects</a></li>
+                            <li><a class="nav-link" href="#work">Work</a></li>
+                            <li><a class="nav-link" href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+
+                    <!-- Desktop / Laptop Nav (shown on lg and above) -->
+                    <nav class="d-none d-lg-flex navbar justify-content-center py-3">
+                        <ul class="navbar-nav flex-row">
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-semibold mx-5" data-target="home" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-semibold mx-5" data-target="about"
+                                    href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-semibold mx-5" data-target="projects"
+                                    href="#projects">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-semibold mx-5" data-target="work" href="#work">Work</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-semibold mx-5" data-target="contact"
+                                    href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- Mobile / Tablet Hamburger Nav (shown below lg) -->
+                </header>
+
+                <section id="home" class="page-section animate__animated animate__fadeIn"
+                    style="min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+                    <div class="hero-section glass-card text-center">
+                        <h2>Welcome!</h2>
+
+                        <p>Hello! I’m Arbab Khan, an Electronics Systems Engineering student passionate about the
+                            intersection of electrical and software systems, especially in the automotive industry.
+                        </p>
+                        <p>Explore my projects, work experience, and feel free to get in touch!</p>
+
+                        <p>Want to connect?:</p>
+                        <div class="link-group">
+                            <a href="https://www.linkedin.com/in/arbab-khan-original14" target="_blank"
+                                rel="noopener noreferrer" class="glass-link">LinkedIn</a>
+                            <a data-target="contact" href="#contact" class="btn-primary glass-link">Contact Me</a>
+                            <a href="https://www.instagram.com/your-instagram-username" target="_blank"
+                                rel="noopener noreferrer" class="glass-link">Instagram</a>
+                        </div>
+                    </div>
+                </section>
+
+                <br /><br />
+
+                <section id="about" class="page-section ">
+                    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+                        <article class="glass-card" style="margin-top: 3vh; margin-bottom: 2vh;">
+                            <header>
+                                <h2>About Arbab</h2>
+                            </header>
+
+                            <img src="img_mk1/IMG_2777.webp" alt="Arbab Khan">
+
+
+                            <p>Arbab Khan is an Electronics Systems Engineering student who enjoys working with both
+                                hardware and software—especially when they come together in cool ways, like in cars.</p>
+                            <p>He’s built things like a Rolling LED Display, a Snake game in C, and a Line Following
+                                Robot—all great chances to get hands-on with code and real-time logic.</p>
+                            <p>Arbab has experience with C programming, PCB design in Altium, and 3D modeling in
+                                SolidWorks.
+                                He’s also worked on team projects, including a stint on an FSAE team, where he learned a
+                                lot
+                                by solving problems under pressure.</p>
+                            <p>In his free time, you’ll find him playing around with JavaScript, exploring new tech, or
+                                geeking out over Formula 1—especially the engineering behind it.</p>
+                            <p>He’s always up for learning, building, and connecting with others who love tech and cars
+                                as
+                                much as he does.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <br /><br />
+
+                <section id="projects" class="page-section ">
+                    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+                        <article class="glass-card" style="margin-top: -5vh; margin-bottom: 8vh;">
+                            <header>
+                                <h2 class="text-center">Projects</h2>
+                            </header>
+
+                            <div class="d-flex justify-content-center align-items-center">
+                                <section>
+                                    <h3>Rolling LED Display:</h3>
+                                    <p>
+                                        Planned and developed a 6x24 Matrix LED display for dynamic message
+                                        distribution.
+                                        Implemented brightness and
+                                        temperature sensors to customize messages based on ambient conditions. The
+                                        primary
+                                        objective was to showcase
+                                        personalized notifications on the scrolling LED display. The project spanned
+                                        four
+                                        months, and the real-world applications of rolling LEDs found relevance in
+                                        transit
+                                        hubs.
+                                    </p>
+
+                                    <img src="img_mk1/PXL_20230215_220005865.jpg"
+                                        alt="Rolling LED Display project image">
+                                </section>
+                            </div>
+
+                            <br />
+
+                            <div>
+                                <section>
+                                    <h3>D'Arsonval Multimeter:</h3>
+                                    <p>
+                                        Constructed a functional multimeter using a D'Arsonval movement meter and
+                                        resistors.
+                                        Applied theoretical concepts: Ohm's Law, Kirchhoff's Voltage Law (KVL), and
+                                        Kirchhoff'
+                                        Current Law (KCL). Created and combined individual circuits involving diverse
+                                        components. Utilized the multimeter circuit measurements. Completed PCB design
+                                        and
+                                        implemented the D’Arsonval movement meter on PCB. Utilized drawings before CAD
+                                        (Solidworks) finalization. Designed a Cube SAT case using CAD (Solidworks).
+                                        Executed
+                                        metal fabrication for the Cube SAT serving as an outer shell for the multimeter.
+                                    </p>
+
+                                    <img src="img_mk1/PXL_20221104_183055703.jpg"
+                                        alt="D'Arsonval Multimeter project image">
+                                    <img src="img_mk1/PXL_20221202_160041338.jpg"
+                                        alt="D'Arsonval Multimeter project image">
+
+                                </section>
+                            </div>
+
+                            <div>
+                                <section>
+                                    <h3>Line Following Robot:</h3>
+                                    <p>
+                                        Created a line-following robot featuring a 16-bit microcontroller for sensor and
+                                        wheel
+                                        control. Programmed the
+                                        robot using the C language, facilitated by a pickit3 for data transfer to the
+                                        microcontroller. Implemented a
+                                        quadruple high-current half-H driver for bidirectional drive currents, suitable
+                                        for
+                                        applications like Half-H
+                                        and
+                                        Full-H Solenoids up to 1A at voltages ranging from 4.5 V to 36 V. Incorporated
+                                        photo
+                                        resistors for effective
+                                        line
+                                        following.
+                                    </p>
+                                    <video controls ">
+                                    <source src="video_mk1/20210623_045624.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </section>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <br /><br />
+
+                <section id="work" class="page-section ">
+                    <div class="d-flex flex-column justify-content-center align-items-center"
+                        style="min-height: 100vh; gap: 2rem; max-width: 900px; margin: 0 auto;">
+
+                        <!-- First Work Experience -->
+                        <article class="glass-card" style="margin-top: -10vh; margin-bottom: 10vh;">
+                            <header>
+                                <h2>Work Experience</h2>
+                            </header>
+
+                            <section>
+                                <h3>110KV Underground Cable Installation – SONDUS Substation, Jeddah</h3>
+                                <p><strong>Client:</strong> National Grid SA | <strong>Contractor:</strong> Al Ojaimi
+                                    Contracting Co.<br>
+                                    <strong>Role:</strong> Co-op Student (Engineering Assistant) |
+                                    <strong>Duration:</strong> 2 Months
+                                </p>
+
+                                <p>
+                                    During my co-op placement at Al Ojaimi Contracting Co., I contributed to a National
+                                    Grid
+                                    SA project involving
+                                    the installation of underground cables connecting the <strong>SAMER step-up
+                                        substation</strong> and the
+                                    <strong>SONDUS step-down substation</strong>. This project was key to improving grid
+                                    reliability and efficient
+                                    power transmission between high voltage and distribution systems.
+                                </p>
+
+                                <h4>Key Contributions (under the guidance of a senior engineer/supervisor):</h4>
+                                <ul>
+                                    <li>Reviewed technical design documents and fiber optic cabling standards including
+                                        UGNFOC and OPGW.</li>
+                                    <li>Participated in cable route planning, drawing verification, and field
+                                        measurements.
+                                    </li>
+                                    <li>Supported site activities such as trenching, conduit installation, and grounding
+                                        under engineering supervision.</li>
+                                    <li>Ensured compliance with National Grid SA's cybersecurity protocols, QA/QC
+                                        standards,
+                                        and installation guidelines.</li>
+                                </ul>
+                            </section>
+                        </article>
+
+                        <!-- Other Work Entries Grouped -->
+                        <article class="glass-card" style="width: 100%;">
+                            <section>
+                                <h3>Apex Canine Training Academy (Part-Time)</h3>
+                                <p>
+                                    Worked as a videographer and video editor, producing short-form content tailored to
+                                    company standards.
+                                    Managed full production flow using Adobe Premiere Pro. Designed and built the
+                                    company’s
+                                    website using Webflow,
+                                    aligning the layout and functionality with brand goals over a 4-month period.
+                                </p>
+                            </section>
+
+                            <section>
+                                <h3>FSAE Team – Electrical Division</h3>
+                                <p>
+                                    Contributed to the battery management system and motor controller logic of a Formula
+                                    Student electric race car.
+                                    Gained hands-on experience with PCB design, sensor calibration, and collaborative
+                                    debugging within a fast-paced
+                                    engineering team. Worked for 4 months on practical vehicle systems integration.
+                                </p>
+                            </section>
+
+                            <section>
+                                <h3>Founder & President — Comic Club</h3>
+                                <p><em>High School</em></p>
+                                <ul>
+                                    <li>Founded and led the school’s first Comic Club, creating a space for comic art
+                                        enthusiasts.</li>
+                                    <li>Organized weekly meetings, workshops, and comic storytelling events.</li>
+                                    <li>Collaborated with faculty to host exhibitions and contests, boosting engagement
+                                        and
+                                        membership.</li>
+                                </ul>
+                            </section>
+                        </article>
+
+                    </div>
+                </section>
+
+
+                <br /><br />
+
+                <section id="contact" class="page-section ">
+                    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+                        <form class="glass-card" style="margin-top: -10vh; margin-bottom: 10vh;">
+                            <h2 class="text-center">Contact Arbab</h2>
+
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="glass-input" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="glass-input" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="glass-textarea" rows="6"
+                                    required></textarea>
+                            </div>
+
+                            <div class="mb-4 text-start">
+                                <label class="glass-toggle">
+                                    <input type="checkbox" id="exampleCheck1" required>
+                                    <span class="slider"></span>
+                                    <span class="toggle-label">Confirm</span>
+                                </label>
+                            </div>
+
+
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="glass-button">Send</button>
+                                <button type="reset" class="glass-button">Reset</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <br /><br />
+
+                <script src="navbar.js"></script>
+            
+                <script src="animation.js"></script> <!-- For background image animation -->
+               
+                <!-- <script src="../js/ajax-page-loader.js"></script> -->    <!-- Good for multiple html pages links -->
+
+                <!-- Bootstrap JS -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

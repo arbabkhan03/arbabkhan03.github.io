@@ -1,0 +1,416 @@
+/* base.css | Global Reset + Typography + Base Utilities */
+
+/* ========== Box Sizing ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ========== Reset Styles (inspired by Normalize + Eric Meyer) ========== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* ========== Base Typography ========== */
+html {
+  font-size: 16px;
+  /* base font size */
+  font-weight: normal;
+  /* normal */
+  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+
+/* ========== Utility: Clearfix ========== */
+.clearfix::before,
+.clearfix::after,
+.container::before,
+.container::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* background-image:url("../img/kajetan-daroch-fePmiSHK2mg-unsplash.webp") ; */
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+@media (max-width: 576px) {
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+body,
+.glass-card,
+.glass-inner {
+  line-height: 1.6;
+  letter-spacing: 0.1px;
+}
+
+
+article p,
+li {
+  font-weight: normal;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.1px;
+  word-break: break-word;
+  hyphens: auto;
+  margin-bottom: 1.25rem;
+  color: rgb(223, 220, 216);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  /* 18px */
+  color: rgb(223, 220, 216);
+  font-weight: normal;
+  /* explicitly normal */
+}
+
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: rgb(223, 220, 216);
+
+}
+
+h4 {
+  font-weight: 500;
+  /* semi-bold headings */
+  line-height: 1.5;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: rgb(223, 220, 216);
+}
+
+
+
+/* Glassy background enhanced */
+/* article {
+  background: rgba(20, 20, 25, 0.4);
+  border-radius: 25px;
+  padding: 32px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.7),
+    inset 0 0 30px rgba(255, 255, 255, 0.1);
+  color: rgb(223, 220, 216);
+  line-height: 1.75;
+  font-size: 1.25rem;
+  transition: box-shadow 0.3s ease;
+  position: relative; 
+  overflow: hidden;
+} */
+
+
+/* article:hover {
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.8),
+    inset 0 0 40px rgba(255, 255, 255, 0.15);
+} */
+
+/* Header styling */
+article header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: rgb(223, 220, 216);
+  text-align: center;
+}
+
+article h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: rgb(223, 220, 216);
+  text-align: left;
+  margin-bottom: 10px;
+
+}
+
+
+/* Image styling */
+article img {
+  display: block;
+  max-width: 450px;
+  /* Increased from 150px to 300px */
+  width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 12px;
+  /* Less round = more boxy */
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* move here */
+
+  box-shadow:
+    0 0 20px 8px rgba(221, 186, 144, 0.6),
+    0 0 15px 4px rgba(255, 255, 255, 0.3),
+    0 15px 30px rgba(0, 0, 0, 0.7),
+    inset 8px 8px 15px rgba(255, 255, 255, 0.3),
+    inset -8px -8px 15px rgba(0, 0, 0, 0.6);
+
+  background:
+    linear-gradient(145deg,
+      rgba(255, 200, 100, 0.15),
+      rgba(0, 0, 0, 0.15));
+  background-clip: padding-box;
+}
+
+article img:hover {
+  transform: scale(1.05);
+  /* Slight zoom to match increased size */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+    0 0 25px 10px rgba(255, 200, 130, 0.7),
+    0 0 20px 6px rgba(255, 255, 255, 0.4),
+    0 20px 40px rgba(0, 0, 0, 0.8),
+    inset 6px 6px 12px rgba(255, 255, 255, 0.35),
+    inset -6px -6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Basic responsive video styling */
+article video {
+  display: block;
+  width: 100%;
+  /* Take full width of container */
+  max-width: 450px;
+  /* Limit max width on large screens */
+  height: auto;
+  /* Keep aspect ratio */
+  margin: 2rem auto;
+  /* Center and add vertical spacing */
+  border-radius: 12px;
+  box-shadow:
+    0 0 20px 8px rgba(221, 186, 144, 0.6),
+    0 0 15px 4px rgba(255, 255, 255, 0.3),
+    0 15px 30px rgba(0, 0, 0, 0.7),
+    inset 8px 8px 15px rgba(255, 255, 255, 0.3),
+    inset -8px -8px 15px rgba(0, 0, 0, 0.6);
+  background:
+    linear-gradient(145deg, rgba(255, 200, 100, 0.15), rgba(0, 0, 0, 0.15));
+  background-clip: padding-box;
+  outline: none;
+  /* Remove focus outline if any */
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Optional hover effect */
+article video:hover {
+  box-shadow:
+    0 0 25px 10px rgba(255, 200, 130, 0.7),
+    0 0 20px 6px rgba(255, 255, 255, 0.4),
+    0 20px 40px rgba(0, 0, 0, 0.8),
+    inset 6px 6px 12px rgba(255, 255, 255, 0.35),
+    inset -6px -6px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  article {
+    padding: 1.5rem 1.5rem;
+  }
+
+  article header h2 {
+    font-size: 2.2rem;
+  }
+
+  article img {
+    max-width: 90%;
+    margin: 1.5rem auto;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 32px;
+}
+
+.hero-section {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.hero-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: rgb(223, 220, 216);
+}
+
+/* .hero-section p {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+  color: rgb(223, 220, 216);
+} */
+
+.hero-section a.btn-primary {
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 1.125rem;
+  user-select: none;
+}
+
+/* Responsive typography */
+@media (max-width: 600px) {
+  .hero-section h2 {
+    font-size: 2rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.page-section {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+}
+
+.page-section:not(.d-none) {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}

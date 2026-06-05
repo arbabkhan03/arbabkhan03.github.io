@@ -289,7 +289,7 @@ input, select, textarea {
 	}
 
 	.align-left {
-		text-align: left;
+		text-align: center;
 	}
 
 	.align-center {
@@ -634,6 +634,11 @@ input, select, textarea {
 		.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
 		}
+
+	/* Lightning bolt needs solid weight to render correctly */
+	#header .logo .icon.fa-bolt:before {
+		font-weight: 900;
+	}
 
 /* Image */
 
@@ -1300,6 +1305,7 @@ input, select, textarea {
 
 			#header .logo .icon:before {
 				font-size: 2rem;
+				font-weight: 900;
 			}
 
 		#header .content {
@@ -1542,13 +1548,15 @@ input, select, textarea {
 			-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
 			-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
-			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
+			padding: 4.5rem 3.5rem 2.5rem 3.5rem;
 			position: relative;
-			width: 40rem;
+			width: 42rem;
 			max-width: 100%;
 			background-color: rgba(27, 31, 34, 0.85);
-			border-radius: 4px;
+			border-radius: 50%;
 			opacity: 0;
+			/* Oval shape: tall enough to hold content but visually rounded */
+			border-radius: 40% / 12%;
 		}
 
 			#main article.active {
@@ -1602,7 +1610,8 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#main article {
-				padding: 3.5rem 2rem 0.5rem 2rem ;
+				padding: 3.5rem 2rem 0.5rem 2rem;
+				border-radius: 30% / 8%;
 			}
 
 				#main article .close:before {
@@ -1618,7 +1627,8 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			#main article {
-				padding: 3rem 1.5rem 0.5rem 1.5rem ;
+				padding: 3rem 1.5rem 0.5rem 1.5rem;
+				border-radius: 20% / 5%;
 			}
 
 		}
@@ -1660,8 +1670,8 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		.profile-pic{
-    border-radius:10px;
-	height:550px;
-    width:auto;
-}
+		.profile-pic {
+			border-radius: 10px;
+			height: 550px;
+			width: auto;
+		}

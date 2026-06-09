@@ -26,10 +26,14 @@
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+	window.setTimeout(function() {
+		$body.removeClass('is-preload');
+
+		window.setTimeout(function() {
+			$body.addClass('powered');
+		}, 3000);
+	}, 100);
+});
 
 	// Fix: Flexbox min-height bug on IE.
 		if (browser.name == 'ie') {
